@@ -99,33 +99,11 @@ Submissions are evaluated on the area under the ROC curve (AUC) between the pred
     - Flexible and powerful model using deep learning techniques.
     - Achieved high accuracy and ROC-AUC with optimized architecture and parameters.
 
-### 🎯 Results
-The models' performance was evaluated using the ROC-AUC metric. Here are the results:
-
-- **Logistic Regression:**
-    - ROC-AUC: *[Insert Value]*
-    - Accuracy: *[Insert Value]*
-    - F1 Score: *[Insert Value]*
-
-- **Random Forest:**
-    - ROC-AUC: *[Insert Value]*
-    - Accuracy: *[Insert Value]*
-    - F1 Score: *[Insert Value]*
-
-- **XGBoost:**
-    - ROC-AUC: *[Insert Value]*
-    - Accuracy: *[Insert Value]*
-    - F1 Score: *[Insert Value]*
-
-- **Neural Network:**
-    - ROC-AUC: *[Insert Value]*
-    - Accuracy: *[Insert Value]*
-    - F1 Score: *[Insert Value]*
-
+### 🎯 Best Model
 Based on the evaluation metrics, the **XGBoost** model provided the best performance in terms of ROC-AUC and overall predictive power.
 
 ### 🌟 Improvements
 To enhance this project further, consider:
-- Experimenting with different models (e.g., Gradient Boosting, LightGBM).
+- Experimenting with different models (e.g., Gradient Boosting).
 - Optimizing hyperparameters with grid search or random search.
 - Incorporating more advanced feature engineering techniques.
