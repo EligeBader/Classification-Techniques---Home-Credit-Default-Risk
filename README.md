@@ -128,7 +128,9 @@ Based on the evaluation metrics, the **XGBoost** model provided the best perform
 
 ### 📈 ROC Curve Comparison
 
-![ROC Curve](path/to/your/roc_curve_image.png)
+![ROC Curve](https://github.com/EligeBader/Classification-Techniques-Home-Credit-Default-Risk/blob/main/AUC%20Scores%20Graph.png)
+
+
 
 ### 🌟 Improvements
 To enhance this project further, consider:
