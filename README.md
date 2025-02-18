@@ -1,6 +1,9 @@
 # 🏡 Home Credit Default Risk Classification Project
 
-**Python | Machine Learning | Kaggle | Data Science**
+[![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)](https://www.python.org/)
+[![Machine Learning](https://img.shields.io/badge/Machine%20Learning-000000?style=for-the-badge&logo=machine-learning&logoColor=white)](https://www.kaggle.com/)
+[![Kaggle](https://img.shields.io/badge/Kaggle-20BEFF?style=for-the-badge&logo=kaggle&logoColor=white)](https://www.kaggle.com/)
+[![Data Science](https://img.shields.io/badge/Data%20Science-FF6F00?style=for-the-badge&logo=data-science&logoColor=white)](https://www.kaggle.com/)
 
 ---
 
