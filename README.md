@@ -126,6 +126,10 @@ Based on the evaluation metrics, the **XGBoost** model provided the best perform
 
 ---
 
+### 📈 ROC Curve Comparison
+
+![ROC Curve](path/to/your/roc_curve_image.png)
+
 ### 🌟 Improvements
 To enhance this project further, consider:
 - Experimenting with different models (e.g., Gradient Boosting).
