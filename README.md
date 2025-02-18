@@ -9,12 +9,19 @@ Many people struggle to get loans due to insufficient or non-existent credit his
 
 **Home Credit Group** strives to broaden financial inclusion for the unbanked population by providing a positive and safe borrowing experience. They use a variety of alternative data—including telco and transactional information—to predict their clients' repayment abilities. Although Home Credit currently uses various statistical and machine learning methods for these predictions, they are challenging Kagglers to help unlock the full potential of their data to ensure clients capable of repayment are not rejected and that loans are given with an appropriate principal, maturity, and repayment schedule to empower their clients' success.
 
+---
+
 ### 📈 Project Impact and Classification Benefits
 
 Implementing the Home Credit Default Risk Classification Project significantly benefits the company by improving its ability to assess loan applicants' creditworthiness accurately. Utilizing classification models like Logistic Regression, Random Forest, XGBoost, and Neural Networks, the project enhances the precision of risk predictions, ultimately reducing default rates and increasing the approval rate for deserving applicants. By choosing these specific models, the project leverages their distinct advantages: Logistic Regression for its simplicity and interpretability, Random Forest for its ensemble strength, XGBoost for its superior predictive power, and Neural Networks for their flexibility and deep learning capabilities. This approach ensures a comprehensive and robust evaluation process, aligning with the company's goal of promoting financial inclusion. For stakeholders, this translates to improved decision-making, optimized resource allocation, and a more inclusive lending environment, leading to sustainable growth and a competitive edge in the financial market.
 
+
+---
 ### 📊 Evaluation
 Submissions are evaluated on the area under the ROC curve (AUC) between the predicted probability and the observed target.
+
+
+---
 
 ### 📁 Dataset Description
 - **application_{train|test}.csv:** Main table, static data for all applications. One row represents one loan.
@@ -26,6 +33,8 @@ Submissions are evaluated on the area under the ROC curve (AUC) between the pred
 - **installments_payments.csv:** Repayment history for previously disbursed credits.
 - **HomeCredit_columns_description.csv:** Column descriptions for the datasets.
 
+--- 
+
 ### 🛠 Tools & Technologies
 - **Python 3.8+:** Primary programming language
 - **Pandas:** Data manipulation and analysis
@@ -33,6 +42,8 @@ Submissions are evaluated on the area under the ROC curve (AUC) between the pred
 - **TensorFlow & Keras:** Neural network models
 - **Imbalanced-learn:** Handling imbalanced datasets
 - **Jupyter Notebook:** Interactive coding and exploration
+
+--- 
 
 ### 🔄 Workflow
 
@@ -60,6 +71,7 @@ Submissions are evaluated on the area under the ROC curve (AUC) between the pred
 6. **Evaluation:**
     - Evaluated the models using metrics like ROC-AUC, accuracy, precision, recall, and F1-score to determine their performance.
 
+--- 
 ### 📂 Project Structure
 
 ```
@@ -84,6 +96,7 @@ Submissions are evaluated on the area under the ROC curve (AUC) between the pred
     - predictions_nn.csv
   - README.md
 ```
+--- 
 
 ### 🧩 Models and Results
 
@@ -103,8 +116,12 @@ Submissions are evaluated on the area under the ROC curve (AUC) between the pred
     - Flexible and powerful model using deep learning techniques.
     - Achieved high accuracy and ROC-AUC with optimized architecture and parameters.
 
+--- 
+
 ### 🎯 Best Model
 Based on the evaluation metrics, the **XGBoost** model provided the best performance in terms of ROC-AUC and overall predictive power.
+
+---
 
 ### 🌟 Improvements
 To enhance this project further, consider:
