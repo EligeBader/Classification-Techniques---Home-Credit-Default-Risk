@@ -1,3 +1,11 @@
+''' 
+In this notebook, we performed data preprocessing, including loading data, handling missing values, feature encoding,
+and data splitting, followed by training and evaluating machine learning models. The purpose of this notebook is to develop 
+a robust pipeline for predictive modeling, ensuring data quality and optimizing model performance. This project aims to build,
+train, and test models for accurate predictions using various preprocessing techniques and machine learning algorithms.
+
+'''
+
 # %%
 import pandas as pd
 import numpy as np
@@ -20,7 +28,16 @@ import keras
 
 
 def load_data(file):
-    df = pd.read_parquet(file, engine='pyarrow')
+    '''
+    Load data from a CSV file into a pandas DataFrame.
+
+    Parameters:
+    file (str): The path to the CSV file.
+
+    Returns:
+    DataFrame: The loaded data as a pandas DataFrame.
+    '''
+    df = pd.read_csv(file)
 
     return df
 
@@ -32,6 +49,17 @@ with open('read_file.pickle', 'wb') as f:
 
 
 def drop_features(df, features_to_drop=[]):
+
+    '''
+    Drop specified features from the DataFrame.
+
+    Parameters:
+    df (DataFrame): The input DataFrame.
+    features_to_drop (list): List of column names to drop.
+
+    Returns:
+    DataFrame: The DataFrame with specified features dropped.
+    '''
     df = df.drop(columns=features_to_drop)
 
     return df
@@ -44,6 +72,20 @@ with open('drop_features.pickle', 'wb') as f:
 
 # %%
 def split_data(df, target, feature_selected= None, features_dropped =[], balanced_data=True):
+
+    '''
+    Split the data into training and testing sets, with optional balancing.
+
+    Parameters:
+    df (DataFrame): The input DataFrame.
+    target (str): The target column name.
+    feature_selected (list): List of selected features.
+    features_dropped (list): List of features to drop.
+    balanced_data (bool): Whether to balance the data using undersampling.
+
+    Returns:
+    tuple: The training and testing sets.
+    '''
 
     if balanced_data == True:
         if feature_selected == None:
@@ -82,6 +124,16 @@ with open('split_data.pickle', 'wb') as f:
 
 # %%
 def clean_data(df):
+
+    '''
+    Clean the data by imputing missing values.
+
+    Parameters:
+    df (DataFrame): The input DataFrame.
+
+    Returns:
+    DataFrame: The cleaned DataFrame with imputed values.
+    '''
     #Use SimpleImputer
 
     #Check Columns having nulls
@@ -112,6 +164,21 @@ with open('clean_data.pickle', 'wb') as f:
 
 # %%
 def encode_data(df, target, categorical_cols, train, model):
+
+    '''
+    Encode categorical data using the specified encoding model.
+
+    Parameters:
+    df (DataFrame): The input DataFrame.
+    target (str): The target column name.
+    categorical_cols (list): List of categorical columns to encode.
+    train (bool): Whether to train the encoder.
+    model (class): The encoding model class.
+
+    Returns:
+    DataFrame: The DataFrame with encoded categorical data.
+    '''
+
     file_name = 'trained_data.pickle'
     if not train: 
         if os.path.exists(file_name):
@@ -171,6 +238,19 @@ with open('encode_data.pickle', 'wb') as f:
 
 # %%
 def train_model(xtrain, ytrain, model_class, **kwargs):
+    '''
+    Train a model using the specified model class and parameters.
+
+    Parameters:
+    xtrain (DataFrame): The training features.
+    ytrain (Series): The training target.
+    model_class (class): The model class to use for training.
+    kwargs: Additional parameters for the model.
+
+    Returns:
+    model: The trained model.
+    '''
+
     model = model_class(**kwargs)
     model.fit(xtrain, ytrain)
 
@@ -185,6 +265,18 @@ with open('train_model.pickle', 'wb') as f:
 
 # %%
 def predict_model(df_test, model, features = []):
+
+    '''
+    Predict using the trained model on the test data.
+
+    Parameters:
+    df_test (DataFrame): The test DataFrame.
+    model (model): The trained model.
+    features (list): List of features to drop before prediction.
+
+    Returns:
+    array: The predicted probabilities.
+    '''
 
     if type(model) == keras.src.models.sequential.Sequential:
         X_new = df_test.drop(columns=features)
@@ -205,6 +297,28 @@ with open('predict_model.pickle', 'wb') as f:
 """# Build Neural Network Model"""
 
 def neural_network_model(X, y, loss='binary_crossentropy', metrics='auc', activations='relu', output_activation='softmax', widths=[64], num_layers=0, epochs=50, batch_size=32, learning_rate=0.001, validation_split=0.3333):
+    
+    '''
+    Build and train a neural network model.
+
+    Parameters:
+    X (DataFrame): The input features.
+    y (Series): The target values.
+    loss (str): The loss function.
+    metrics (str): The evaluation metric.
+    activations (str or list): The activation function(s) for hidden layers.
+    output_activation (str): The activation function for the output layer.
+    widths (list): The widths of the hidden layers.
+    num_layers (int): The number of hidden layers.
+    epochs (int): The number of training epochs.
+    batch_size (int): The batch size for training.
+    learning_rate (float): The learning rate for the optimizer.
+    validation_split (float): The fraction of data to use for validation.
+
+    Returns:
+    tuple: The trained model and the training history.
+    '''
+
     model_nn = Sequential()
     model_nn.add(Input((X.shape[1],)))
     
